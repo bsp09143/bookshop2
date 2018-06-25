@@ -4,12 +4,14 @@ import Content from './Content.jsx';
 import { Nav,Navbar,NavItem,NavDropdown,MenuItem} from 'react-bootstrap';
 import { Route, NavLink, HashRouter } from "react-router-dom";
 import "../components/Content.css";
+import style from '../../dist/styles/main.scss';
+import 'whatwg-fetch';
+import '../../dist/bootstrap-multiselect.css';
 
 class App extends Component 
 {
     render()
-    {
-        
+    {        
         return(
             <HashRouter>     
                 <div>
@@ -31,7 +33,7 @@ class App extends Component
                     <div className="well wellStyles">
                         <Route path="/home" component={Home}/>
                         <Route path="/content" component={Content}/>
-                    </div>
+                    </div>                    
                 </div>
             </HashRouter>
         );

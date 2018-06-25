@@ -1,0 +1,35 @@
+.bhairav{
+    h1 {
+        color: green;
+    }
+}
+
+@for $i from 1 through 1000 {
+    $pixel: $i;
+  
+    .mt#{$pixel} {
+      margin-top: #{$pixel}px;
+    }
+    .mr#{$pixel} {
+      margin-right: #{$pixel}px;
+    }
+    .mb#{$pixel} {
+      margin-bottom: #{$pixel}px;
+    }
+    .ml#{$pixel} {
+      margin-left: #{$pixel}px;
+    }
+  
+    .pt#{$pixel} {
+      padding-top: #{$pixel}px;
+    }
+    .pr#{$pixel} {
+      padding-right: #{$pixel}px;
+    }
+    .pb#{$pixel} {
+      padding-bottom: #{$pixel}px;
+    }
+    .pl#{$pixel} {
+      padding-left: #{$pixel}px;
+    }
+  }

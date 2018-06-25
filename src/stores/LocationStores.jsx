@@ -6,8 +6,7 @@ class LocationStores
 {
     
     constructor()
-    {
-        debugger;
+    {        
         this.locations = [];
         this.bindListeners({
             handleUpdateLocation: LocationActions.UPDATE_LOCATIONS,          
@@ -27,8 +26,6 @@ class LocationStores
         //     {id: 3, name:'New Bombay'},
         // ];        
         //this.setState({data: this.locations});
-
-        debugger;
         fetch(`http://localhost:3000/books`)
         .then(result=>result.json())
         .then(items=>this.setState({data:items}));
@@ -42,7 +39,7 @@ class LocationStores
         // let index = array.indexOf(listData.data);        
         // array.splice(index, 1);              
         // this.setState({ data: array});     
-        debugger;
+        
         const response = await fetch('http://localhost:3000/books/'+listData.data.id, {
         method: 'DELETE'
         });
@@ -51,7 +48,7 @@ class LocationStores
     
     async handleAddItem(newLocationName)
     {       
-        debugger; 
+        
         this.state.counter = this.state.counter +1;
         // let oldArray = this.state.data;           
         // let newArray = {data:[...oldArray,{id:this.state.counter, name:newLocationName.newLocationName}]};

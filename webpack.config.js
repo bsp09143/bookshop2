@@ -5,7 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, 'dist');
 var NPM_DIR = path.resolve(__dirname, 'node_modules');
 
 var config = {
-    entry: ['babel-polyfill',BASE_DIR + '/main.jsx'],
+    entry: ['babel-polyfill','whatwg-fetch',BASE_DIR + '/main.jsx'],
     module: {
         loaders: [
             {
@@ -16,7 +16,7 @@ var config = {
             {
                 test: /\.scss$/,
                 include: BASE_DIR,
-                loader: ['style-loader', 'css-loader']
+                loader: ['style-loader','css-loader','sass-loader']
             },
             {
                 test: /\.css$/,

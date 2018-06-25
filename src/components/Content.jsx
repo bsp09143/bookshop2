@@ -4,54 +4,52 @@ import LocationActions from '../actions/LocationActions.jsx';
 import "../components/Content.css";
 import { Label } from 'react-bootstrap';
 import { Button,Form, Input, FormModal,FormInline, FormGroup, PageHeader, FormControl, Grid, Row, Col} from 'react-bootstrap';
-
+import MultiSelectStaticComponent from './MultiSelectStaticComponent.jsx';
 
 class Content extends Component
 {
     constructor()
-    {
-        debugger;
+    {        
         super();
         this.state= {data:LocationStore.getState().data,newLocationName:''};
         this.onChange = this.onChange.bind(this);
         this.removeItem = this.removeItem.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.handleAddLocation = this.handleAddLocation.bind(this);
-    }   
+        this.handleAddLocation = this.handleAddLocation.bind(this);        
+    }
+    
     componentDidMount()
-    {
-        debugger;
+    {        
         LocationStore.listen(this.onChange);
         LocationActions.updateLocations();
     }
 
     componentWillUnmount()
     {
-        debugger;
+        
         LocationStore.unlisten(this.onChange);
     }
 
     onChange()
     {
-        debugger;
+        
         this.setState({data:LocationStore.getState().data});
     }
 
     removeItem(currList) 
     {    
-        debugger;    
+            
         LocationActions.removeItem(currList);
     }
 
     handleChange(e) 
-    {
-        debugger;
+    {        
         this.setState({ newLocationName:e.target.value });
     }
 
     handleAddLocation()
     {
-        debugger;
+        
         LocationActions.addItem( this.state.newLocationName );
     }
     
@@ -71,8 +69,14 @@ class Content extends Component
                             <FormControl  type="text" value={this.state.newLocationName} placeholder="Enter text" onChange={this.handleChange}/>                 
                         </FormGroup>
                     </Col>                  
-                </Form>
-            }
+                </Form>                          
+            }           
+            <div> 
+                <MultiSelectStaticComponent />
+            </div>      
+            <div className="bhairav">
+                    <h1 >ABCD</h1>                    
+            </div>      
             </Col>               
         );        
         const listInstance = (
